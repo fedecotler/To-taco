@@ -36,6 +36,7 @@ li {
     font-size: 1.25em;
 }
 
+
 .container {
     max-width: 1400px;
     margin: auto;
@@ -45,21 +46,23 @@ li {
 header {
     background-color: rgb(179, 243, 105);
 
+    &__logo {
+        margin: 0;
+        padding: 25px 30px;
+        font-weight: bold;
+        color: rgb(255, 0, 0);
+        font-size: 2em;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-header .logo {
-    margin: 0;
-    padding: 25px 30px;
-    font-weight: bold;
-    color: rgb(255, 0, 0);
-    font-size: 2em;
-}
 
-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 main {
     background-color: rgb(179, 243, 105);
