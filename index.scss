@@ -1,0 +1,122 @@
+@import "variables";
+@import "sass/pages/contacto";
+
+h1 {
+    color: $colorPrincipal;
+
+
+    span {
+        color: violet;
+    }
+}
+
+// NODING
+
+.bloque {
+    background-color: gray;
+    padding: $espacioRelleno;
+    transition: $transicion;
+
+    &__elemento {
+        text-align: center;
+    }
+
+    &__elemento2 {
+        // font-size: $fontmedium; 
+        font-size: $fontbase + 4;
+    }
+
+    &:hover {
+        background-color: lightblue;
+        color: black;
+    }
+}
+
+.btn-base {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: $fontmedium;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    transition: $transicion;
+    .btn-base:hover, .btn-contacto:hover, .btn-info:hover {
+        opacity: 0.8;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// EXTEND
+
+.btn-contacto {
+    @extend .btn-base;
+    background-color: darkblue;
+}
+
+.btn-sucursales {
+    @extend .btn-base;
+    background-color: darkgreen;
+}
+
+// MIXIN
+
+@mixin card-base($alineacion, $fondo, $ancho) {
+    border-radius: 10px;
+    border: 2px solid #333;
+    margin-top: 30px;
+    display: flex;
+    justify-content: $alineacion;
+    background-color: $fondo;
+
+    @if ($ancho == "sm") {
+        max-width: 50%;
+    } @else if ($ancho == "md") {
+        max-width: 75%;
+    } @else {
+        max-width: 100%;
+    }
+}
+
+.card-1 {
+    @include card-base(space-between, yellow, "sm")
+}
+
+.card-2 {
+    @include card-base(space-around, cyan, "md")
+}
+
+.card-3 {
+    @include card-base(space-evenly, salmon, "")
+}
+
+footer {
+    margin-top: 40px;
+}
+
+// MAPA
+
+$redesSociales: (
+    github: #1d1d1d,
+    twitter: #55acee,
+    instagram: #c92d8f 
+);
+
+@each $nombre, $color in $redesSociales {
+.link-#{$nombre} {
+    margin: 0, 5px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: $color;
+}
+}
+
+.programas {
+    display: flex;
+    flex-direction: column;
+  }
